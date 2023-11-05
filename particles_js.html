@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 70vh;
+        }
+
+        .mydiv {
+            width: 500px;
+            height: 400px;
+            background: #111;
+            overflow: hidden;
+            position: relative;
+        }
+
+        span {
+            width: 10px;
+            height: 10px;
+            background: red;
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        span::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: animate 2s linear infinite;
+        }
+
+        @keyframes animate{
+            0%{
+                transform: translate(0);
+            }
+            100%{
+                transform: translate(300px);
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="mydiv"></div>
+    <script>
+        const myDiv = document.querySelector('.mydiv');
+        myDiv.addEventListener('mousemove', function (e) {
+            let particles = document.createElement('span');
+            let x = e.offsetX;
+            let y = e.offsetY;
+            myDiv.appendChild(particles);
+
+            particles.style.left = x + 'px';
+            particles.style.top = y + 'px';
+
+            let size = Math.random() * 8;
+            particles.style.width = 2 + size + 'px';
+            particles.style.height = 2 + size + 'px';
+
+            let transformValue = Math.random() * 360;
+            particles.style.transform = 'rotate(' + transformValue + 'deg)';
+
+            setTimeout(() => {
+                myDiv.removeChild(particles);
+            }, 2000);
+        });
+    </script>
+
+    <script>
+        // document.addEventListener('mousemove', function(e){
+        //     let body = document.querySelector('body');
+        //     let particles = document.createElement('span');
+        //     let x = e.offsetX;
+        //     let y = e.offsetY;
+        //     body.appendChild(particles);
+
+        //     particles.style.left = x + 'px';
+        //     particles.style.top = y + 'px';
+
+        //     setTimeout(() => {
+        //         body.removeChild(particles);
+        //     }, 2000);
+        // })
+    </script>
+</body>
+
+</html>
+
+
+<!--
+6 Nov 2023
+source: https://www.youtube.com/watch?v=B3d3pMxPYa8
+ -->
