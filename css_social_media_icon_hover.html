@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Soical Media Icon Hover Effects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --bg: #222;
+        }
+        .area{
+            width: 700px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 50px auto;
+            padding: 16px;
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        ul{
+            display: flex;
+            justify-content: space-around;
+        }
+        li{
+            /* border: 1px solid red; */
+            list-style: none;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .5s;
+            position: relative;
+        }
+        li::before{
+            content: '';
+            position: absolute;
+            inset: 30px;
+            box-shadow: 0 0 0 10px var(--clr),
+                        0 0 0 20px var(--bg),
+                        0 0 0 22px var(--clr);
+            transition: .5s;          
+        }
+        li::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bg);
+            transform: rotate(45deg);
+            /* border: 1px solid rgb(51, 51, 49); */
+            transition: .5s;
+        }
+        a{
+            text-decoration: none;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--clr);
+        }
+        .icon-fm{
+            font-size: 32px;
+            transition: .5s;
+            
+        }
+        span{
+            position: absolute;
+            opacity: 0;
+            transition: .5s;
+            transform: scale(0) translateY(50%);
+        }
+
+        li:hover .icon-fm{
+            transform: translateY(-25%);
+        }
+        li:hover span{
+            opacity: 1;
+            transform: scale(1) translateY(100%);
+        }
+
+        .one li:hover::before{
+            inset: 15px;
+        }
+        .one li:hover::after{
+            /* inset: -10px; */
+            inset: 0px;
+        }
+
+        .two li:hover::before{
+            inset: 15px;
+        }
+        .two li:hover::after{
+            inset: -10px;
+        }
+        .two li:hover .icon-fm,
+        .two li:hover span{
+            filter: drop-shadow(0 0 20px var(--clr))
+                    drop-shadow(0 0 40px var(--clr))
+                    drop-shadow(0 0 60px var(--clr));
+        }
+
+        .three li:hover::before{
+            inset: 15px;
+        }
+        .three li:hover::after{
+            inset: 0px;
+            transform: rotate(0deg);
+        }
+        .three li:hover .icon-fm,
+        .three li:hover span{
+            filter: drop-shadow(0 0 20px var(--clr))
+                    drop-shadow(0 0 40px var(--clr))
+                    drop-shadow(0 0 60px var(--clr));
+        }
+
+        .four li:hover::before{
+            inset: 15px;
+        }
+        .four li:hover::after{
+            inset: 0px;
+            transform: rotate(0deg);
+            background: var(--clr);
+        }
+        .four li:hover .icon-fm,
+        .four li:hover span{
+            color: white;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="area">
+        <div class="one">
+            <ul>
+                <li style="--clr: red;">
+                    <a href="">
+                        <i class="fa-brands fa-square-facebook icon-fm"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li style="--clr: green;">
+                    <a href="">
+                        <i class="fa-brands fa-youtube icon-fm"></i>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+                <li style="--clr: blue;">
+                    <a href="">
+                        <i class="fa-brands fa-twitter icon-fm"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="two">
+            <ul>
+                <li style="--clr: red;">
+                    <a href="">
+                        <i class="fa-brands fa-square-facebook icon-fm"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li style="--clr: green;">
+                    <a href="">
+                        <i class="fa-brands fa-youtube icon-fm"></i>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+                <li style="--clr: blue;">
+                    <a href="">
+                        <i class="fa-brands fa-twitter icon-fm"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="three">
+            <ul>
+                <li style="--clr: red;">
+                    <a href="">
+                        <i class="fa-brands fa-square-facebook icon-fm"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li style="--clr: green;">
+                    <a href="">
+                        <i class="fa-brands fa-youtube icon-fm"></i>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+                <li style="--clr: blue;">
+                    <a href="">
+                        <i class="fa-brands fa-twitter icon-fm"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="four">
+            <ul>
+                <li style="--clr: red;">
+                    <a href="">
+                        <i class="fa-brands fa-square-facebook icon-fm"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li style="--clr: green;">
+                    <a href="">
+                        <i class="fa-brands fa-youtube icon-fm"></i>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+                <li style="--clr: blue;">
+                    <a href="">
+                        <i class="fa-brands fa-twitter icon-fm"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- 
+   Date: 13 Nov 2023
+   YouTube: watch?v=Z62XVYDiQ4E&t=47s
+  -->
